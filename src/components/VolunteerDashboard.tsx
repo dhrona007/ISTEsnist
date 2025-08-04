@@ -22,7 +22,9 @@ const VolunteerDashboard: React.FC = () => {
       setError("");
       try {
         // Replace with actual API call to get volunteer info for logged-in user
-        const response = await fetch("http://localhost:4000/api/volunteers");
+        const response = await fetch(
+          `${import.meta.env.VITE_API_URL}/api/volunteers`
+        );
         if (!response.ok) {
           setError("Failed to fetch volunteer data");
           setLoading(false);

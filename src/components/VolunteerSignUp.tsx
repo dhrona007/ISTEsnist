@@ -19,20 +19,23 @@ const VolunteerSignUp: React.FC = () => {
     e.preventDefault();
     setMessage("");
     try {
-      const response = await fetch("http://localhost:4000/api/volunteers", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          interests: formData.interests,
-          hours: 0,
-          rank: "New Volunteer",
-        }),
-      });
+      const response = await fetch(
+        `${import.meta.env.VITE_API_URL}/api/volunteers`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: formData.name,
+            email: formData.email,
+            phone: formData.phone,
+            interests: formData.interests,
+            hours: 0,
+            rank: "New Volunteer",
+          }),
+        }
+      );
       if (!response.ok) {
         const data = await response.json();
         setMessage(data.message || "Failed to sign up");
