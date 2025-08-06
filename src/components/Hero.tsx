@@ -49,7 +49,7 @@ const Hero = () => {
           <div className="bg-white/10 backdrop-blur-md rounded-xl p-6 transform hover:scale-105 transition-all duration-300">
             <Users className="h-12 w-12 text-orange-400 mx-auto mb-4" />
             <h3 className="text-xl font-semibold text-white mb-2">
-              500+ Members
+              150+ Members
             </h3>
             <p className="text-gray-300">
               Active student community across all departments
